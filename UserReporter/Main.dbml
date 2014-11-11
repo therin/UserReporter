@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Sessions" Class="MainDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Sessions.mdf;Integrated Security=True" SettingsObjectName="UserReporter.Properties.Settings" SettingsPropertyName="SessionsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ActiveSessions" Member="ActiveSessions">
+    <Type Name="ActiveSession">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sessionStart" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="computerName" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="companyName" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="expiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="userName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserSessions" Member="UserSessions">
+    <Type Name="UserSession">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="computerName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="companyName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="expiryDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="sessionDuration" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="addedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
